@@ -4,130 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Droppp Privacy Policy</title>
+  <meta name="description" content="Privacy policy for Droppp, a local Wi-Fi file transfer app." />
   <link rel="icon" href="favicon.png" />
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
-      color: #161719;
-      background:
-        radial-gradient(circle at 20% 0%, rgba(255,255,255,.95), transparent 34%),
-        linear-gradient(180deg, #faf9f5 0%, #f3f2ee 60%, #ebe9e3 100%);
-      line-height: 1.7;
-    }
-
-    .wrap {
-      width: min(820px, calc(100% - 36px));
-      margin: 0 auto;
-      padding: 54px 0;
-    }
-
-    .card {
-      padding: 42px;
-      border-radius: 34px;
-      background: rgba(255,255,255,.72);
-      border: 1px solid rgba(20,20,20,.11);
-      box-shadow: 0 26px 80px rgba(20,20,20,.13);
-      backdrop-filter: blur(22px);
-    }
-
-    .top {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 30px;
-    }
-
-    .top img {
-      width: 48px;
-      height: 48px;
-      border-radius: 15px;
-      box-shadow: 0 10px 24px rgba(0,0,0,.12);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 38px;
-      line-height: 1;
-      letter-spacing: -0.06em;
-    }
-
-    .date {
-      margin-top: 8px;
-      color: #747474;
-      font-weight: 700;
-    }
-
-    h2 {
-      margin: 30px 0 8px;
-      font-size: 22px;
-      letter-spacing: -0.03em;
-    }
-
-    p {
-      margin: 0 0 14px;
-      color: #464646;
-      font-weight: 600;
-    }
-
-    a {
-      color: #111;
-      font-weight: 900;
-    }
-
-    .back {
-      display: inline-flex;
-      margin-bottom: 18px;
-      color: #555;
-      text-decoration: none;
-      font-weight: 900;
-    }
-
-    .footer {
-      margin-top: 34px;
-      padding-top: 22px;
-      border-top: 1px solid rgba(20,20,20,.1);
-      color: #777;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    @media (max-width: 640px) {
-      .card {
-        padding: 28px 22px;
-        border-radius: 28px;
-      }
-
-      h1 {
-        font-size: 31px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="wrap">
-    <a class="back" href="index.html">← Back to Droppp</a>
-
-    <section class="card">
-      <div class="top">
-        <img src="app-icon.png" alt="Droppp app icon" />
-        <div>
-          <h1>Privacy Policy</h1>
-          <div class="date">Effective Date: May 28, 2026</div>
-        </div>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Droppp home">
+        <img src="app-icon.png" alt="" />
+        <span>Droppp</span>
+      </a>
+      <div class="navlinks">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#screens">Screens</a>
+        <a href="help.html">Help</a>
+        <a class="is-active" href="privacy.html">Privacy</a>
       </div>
+    </nav>
+  </header>
 
-      <p>Droppp is designed as a simple local Wi‑Fi file transfer app. We respect your privacy and do not collect, store, or share personal information.</p>
+  <main class="page-main">
+    <section class="container page-title">
+      <p class="kicker">Droppp privacy</p>
+      <h1>Privacy Policy</h1>
+      <p>Effective Date: May 28, 2026</p>
+    </section>
+
+    <article class="container legal-copy">
+      <p>Droppp is designed as a simple local Wi-Fi file transfer app. We respect your privacy and do not collect, store, or share personal information.</p>
 
       <h2>Information We Collect</h2>
       <p>Droppp does not collect personal information. The app does not require account registration, login, email address, name, or any other personal identifier.</p>
 
       <h2>File Transfers</h2>
-      <p>Droppp allows files to be transferred between devices on the same local Wi‑Fi network. Files transferred through Droppp are stored locally on your device inside the app’s data storage.</p>
+      <p>Droppp allows files to be transferred between devices on the same local Wi-Fi network. Files transferred through Droppp are stored locally on your device inside the app's data storage.</p>
       <p>Droppp does not upload your files to any external server, cloud service, or third-party storage.</p>
 
       <h2>Local Network</h2>
-      <p>Droppp may use your local network to allow nearby devices on the same Wi‑Fi network to access the temporary file drop page provided by the app. This connection is used only for local file transfer while the receiving feature is active.</p>
+      <p>Droppp may use your local network to allow nearby devices on the same Wi-Fi network to access the temporary file drop page provided by the app. This connection is used only for local file transfer while the receiving feature is active.</p>
 
       <h2>Third-Party Services</h2>
       <p>Droppp does not use third-party analytics, advertising SDKs, tracking tools, or external data collection services.</p>
@@ -138,7 +53,7 @@
       <h2>Data Storage and Deletion</h2>
       <p>Files received through Droppp remain stored locally on your device unless you delete them from the app or remove the app from your device.</p>
 
-      <h2>Children’s Privacy</h2>
+      <h2>Children's Privacy</h2>
       <p>Droppp does not knowingly collect personal information from children or any other users.</p>
 
       <h2>Changes to This Privacy Policy</h2>
@@ -146,9 +61,13 @@
 
       <h2>Contact</h2>
       <p>If you have any questions about this Privacy Policy, you may contact us at <a href="mailto:brick@pixelbricktek.com">brick@pixelbricktek.com</a>.</p>
-
-      <div class="footer">© 2026 Droppp. All rights reserved.</div>
-    </section>
+    </article>
   </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      &copy; 2026 PixelBrick. All rights reserved.
+    </div>
+  </footer>
 </body>
 </html>

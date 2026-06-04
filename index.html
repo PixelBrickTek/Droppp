@@ -6,517 +6,113 @@
   <title>Droppp - Local Wi-Fi File Drop</title>
   <meta name="description" content="Droppp lets you drop files from your computer to your iPhone over local Wi-Fi. No cable, no cloud, no login." />
   <link rel="icon" href="favicon.png" />
-  <style>
-    :root {
-      --bg: #f3f2ee;
-      --ink: #151619;
-      --muted: #737373;
-      --card: rgba(255,255,255,.62);
-      --line: rgba(20,20,20,.12);
-      --shadow: 0 26px 80px rgba(20,20,20,.14);
-      --dark: #1d1e20;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 20% 0%, rgba(255,255,255,.95), transparent 34%),
-        radial-gradient(circle at 80% 8%, rgba(218,218,212,.9), transparent 38%),
-        linear-gradient(180deg, #faf9f5 0%, var(--bg) 54%, #ebe9e3 100%);
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .wrap {
-      width: min(1120px, calc(100% - 36px));
-      margin: 0 auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(24px);
-      background: rgba(243,242,238,.74);
-      border-bottom: 1px solid rgba(20,20,20,.06);
-    }
-
-    .nav {
-      height: 74px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      font-size: 24px;
-    }
-
-    .brand img {
-      width: 42px;
-      height: 42px;
-      border-radius: 13px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.12);
-    }
-
-    .navlinks {
-      display: flex;
-      gap: 18px;
-      color: #555;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .hero {
-      min-height: calc(100vh - 74px);
-      display: grid;
-      grid-template-columns: 1.02fr .98fr;
-      align-items: center;
-      gap: 54px;
-      padding: 70px 0 88px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255,255,255,.54);
-      box-shadow: 0 12px 34px rgba(0,0,0,.06);
-      color: #4a4a4a;
-      font-weight: 800;
-      font-size: 14px;
-    }
-
-    h1 {
-      margin: 26px 0 20px;
-      font-size: clamp(48px, 8vw, 96px);
-      line-height: .9;
-      letter-spacing: -0.08em;
-      font-weight: 950;
-    }
-
-    .lead {
-      margin: 0;
-      max-width: 570px;
-      font-size: clamp(19px, 2.3vw, 25px);
-      line-height: 1.35;
-      letter-spacing: -0.03em;
-      color: #414141;
-      font-weight: 760;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 34px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 54px;
-      padding: 0 22px;
-      border-radius: 999px;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      border: 1px solid var(--line);
-    }
-
-    .button.primary {
-      background: var(--dark);
-      color: white;
-      box-shadow: 0 18px 48px rgba(20,20,20,.24);
-    }
-
-    .button.secondary {
-      background: rgba(255,255,255,.58);
-      color: #202020;
-    }
-
-    .device-card {
-      position: relative;
-      border-radius: 38px;
-      background: rgba(255,255,255,.42);
-      border: 1px solid rgba(20,20,20,.1);
-      box-shadow: var(--shadow);
-      padding: 24px;
-      backdrop-filter: blur(24px);
-    }
-
-    .device-card::before {
-      content: "";
-      position: absolute;
-      inset: -24px;
-      background: radial-gradient(circle, rgba(40,40,40,.13), transparent 60%);
-      z-index: -1;
-      filter: blur(18px);
-    }
-
-    .device-card img {
-      display: block;
-      width: 100%;
-      max-height: 640px;
-      object-fit: contain;
-      border-radius: 28px;
-    }
-
-    .section {
-      padding: 76px 0;
-    }
-
-    .section-title {
-      margin: 0 0 16px;
-      text-align: center;
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1;
-      letter-spacing: -0.07em;
-      font-weight: 950;
-    }
-
-    .section-sub {
-      margin: 0 auto 34px;
-      text-align: center;
-      max-width: 620px;
-      color: #5d5d5d;
-      font-size: 18px;
-      line-height: 1.45;
-      font-weight: 650;
-      letter-spacing: -0.02em;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 34px;
-    }
-
-    .feature {
-      padding: 26px;
-      border-radius: 30px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      box-shadow: 0 18px 48px rgba(0,0,0,.07);
-      backdrop-filter: blur(18px);
-    }
-
-    .feature .icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      border-radius: 17px;
-      background: var(--dark);
-      color: white;
-      font-size: 24px;
-      margin-bottom: 20px;
-      box-shadow: 0 14px 32px rgba(20,20,20,.2);
-    }
-
-    .feature h3 {
-      margin: 0 0 8px;
-      font-size: 22px;
-      letter-spacing: -0.04em;
-    }
-
-    .feature p {
-      margin: 0;
-      color: #626262;
-      line-height: 1.48;
-      font-weight: 600;
-    }
-
-    .showcase {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .showcase-main,
-    .phone-stack {
-      border-radius: 34px;
-      background: rgba(255,255,255,.54);
-      border: 1px solid var(--line);
-      box-shadow: 0 22px 60px rgba(0,0,0,.11);
-      overflow: hidden;
-    }
-
-    .showcase-main img {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-height: 760px;
-      object-fit: contain;
-      object-position: center;
-      background: rgba(255,255,255,.38);
-    }
-
-    .phone-stack {
-      padding: 18px;
-      display: grid;
-      gap: 14px;
-    }
-
-    .phone-stack img {
-      width: 100%;
-      height: auto;
-      max-height: 370px;
-      object-fit: contain;
-      object-position: center;
-      border-radius: 24px;
-      display: block;
-      background: rgba(255,255,255,.38);
-    }
-
-    .privacy-card {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 34px;
-      border-radius: 34px;
-      background: var(--dark);
-      color: white;
-      text-align: center;
-      box-shadow: 0 26px 80px rgba(20,20,20,.22);
-    }
-
-    .privacy-card h2 {
-      margin: 0 0 10px;
-      font-size: 34px;
-      letter-spacing: -0.05em;
-    }
-
-    .privacy-card p {
-      margin: 0 auto 22px;
-      color: rgba(255,255,255,.72);
-      max-width: 560px;
-      line-height: 1.5;
-      font-weight: 650;
-    }
-
-    .privacy-card .button {
-      background: white;
-      color: #151619;
-    }
-
-    footer {
-      padding: 32px 0 54px;
-      color: #737373;
-      text-align: center;
-      font-weight: 650;
-      font-size: 14px;
-    }
-
-    @media (max-width: 860px) {
-      .hero,
-      .showcase {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 44px 0 58px;
-        gap: 28px;
-      }
-
-      .device-card {
-        padding: 14px;
-        border-radius: 28px;
-      }
-
-      .device-card img {
-        max-height: 520px;
-        border-radius: 22px;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      .showcase-main,
-      .phone-stack {
-        border-radius: 28px;
-      }
-
-      .showcase-main img {
-        max-height: 620px;
-      }
-
-      .phone-stack {
-        padding: 12px;
-      }
-
-      .phone-stack img {
-        max-height: 320px;
-        border-radius: 20px;
-      }
-
-      .navlinks {
-        display: none;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .wrap {
-        width: min(100% - 24px, 1120px);
-      }
-
-      .nav {
-        height: 64px;
-      }
-
-      .brand {
-        font-size: 22px;
-      }
-
-      .brand img {
-        width: 38px;
-        height: 38px;
-      }
-
-      .hero {
-        min-height: auto;
-      }
-
-      .lead {
-        font-size: 18px;
-      }
-
-      .hero-actions {
-        gap: 10px;
-      }
-
-      .button {
-        width: 100%;
-      }
-
-      .section {
-        padding: 52px 0;
-      }
-
-      .feature {
-        padding: 22px;
-        border-radius: 24px;
-      }
-
-      .device-card img {
-        max-height: 430px;
-      }
-
-      .showcase-main img {
-        max-height: 520px;
-      }
-
-      .phone-stack img {
-        max-height: 260px;
-      }
-
-      .privacy-card {
-        padding: 28px 22px;
-        border-radius: 28px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <nav class="wrap nav">
-      <a class="brand" href="#">
-        <img src="app-icon.png" alt="Droppp app icon" />
+  <header class="site-header">
+    <nav class="container nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Droppp home">
+        <img src="app-icon.png" alt="" />
         <span>Droppp</span>
       </a>
       <div class="navlinks">
         <a href="#features">Features</a>
         <a href="#screens">Screens</a>
+        <a href="help.html">Help</a>
         <a href="privacy.html">Privacy</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="wrap hero">
-      <div>
-        <div class="badge">Local Wi‑Fi File Drop</div>
-        <h1>Drop files<br />to iPhone.</h1>
-        <p class="lead">Send files from your computer or nearby device to your iPhone over the same Wi‑Fi network. No cable. No cloud. No login.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#screens">See how it works</a>
-          <a class="button secondary" href="privacy.html">Privacy Policy</a>
+    <section class="hero-panel">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="kicker">Local Wi-Fi file drop</p>
+          <h1>Drop files to iPhone.</h1>
+        <p class="lead">Send files from your computer or nearby device to your iPhone over the same Wi-Fi network. No cable, no cloud, no login.</p>
+          <div class="button-row">
+            <a class="button button-primary" href="https://apps.apple.com/app/id6773982595" target="_blank" rel="noopener">Download on App Store</a>
+            <a class="button button-secondary" href="help.html">How it works</a>
+            <a class="button button-secondary" href="#screens">View screens</a>
+          </div>
         </div>
-      </div>
-      <div class="device-card">
-        <img src="main.jpg" alt="Droppp web browser to iPhone transfer preview" />
+        <figure class="hero-media">
+          <img src="main.jpg" alt="Droppp browser and iPhone transfer preview" />
+        </figure>
       </div>
     </section>
 
-    <section id="features" class="wrap section">
-      <h2 class="section-title">Simple by design.</h2>
-      <p class="section-sub">Turn on Droppp, open the shown address in a browser, and drop files directly into your iPhone.</p>
-
-      <div class="features">
-        <article class="feature">
-          <div class="icon">⌁</div>
-          <h3>Local transfer</h3>
-          <p>Files move over the same Wi‑Fi network without external cloud upload.</p>
-        </article>
-        <article class="feature">
-          <div class="icon">↧</div>
-          <h3>Browser upload</h3>
-          <p>Use a computer or nearby device browser to drag and drop files.</p>
-        </article>
-        <article class="feature">
-          <div class="icon">✓</div>
-          <h3>Share or delete</h3>
-          <p>Received files stay inside the app until you share or remove them.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="screens" class="wrap section">
-      <h2 class="section-title">Built for quick drops.</h2>
-      <p class="section-sub">A clean file list, simple controls, QR access, and light or dark themes.</p>
-
-      <div class="showcase">
-        <div class="showcase-main">
-          <img src="iphone2.jpg" alt="Droppp light theme file list" />
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Fast local receiving</p>
+          <h2>Simple enough for everyday drops.</h2>
+          <p>Turn on Droppp, open the shown address in a browser, and move files directly to your iPhone.</p>
         </div>
-        <div class="phone-stack">
-          <img src="iphone3.jpg" alt="Droppp selected files actions" />
-          <img src="iphone4.jpg" alt="Droppp QR code view" />
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-mark">01</span>
+            <h3>Local transfer</h3>
+            <p>Files move across the same Wi-Fi network without external cloud upload.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-mark">02</span>
+            <h3>Browser upload</h3>
+            <p>Use a computer or nearby device browser to choose files or drag them into the page.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-mark">03</span>
+            <h3>Share or delete</h3>
+            <p>Received files stay inside Droppp until you share them elsewhere or remove them.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="wrap section">
-      <div class="privacy-card">
-        <h2>Private and local.</h2>
-        <p>Droppp does not require an account, login, analytics, ads, or cloud storage. Your transferred files are saved locally inside the app.</p>
-        <a class="button" href="privacy.html">Read Privacy Policy</a>
+    <section id="screens" class="section section-tint">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Clean controls</p>
+          <h2>Built around the transfer flow.</h2>
+          <p>A focused file list, quick sharing, QR access, and clear dark or light app states.</p>
+        </div>
+
+        <div class="screen-grid">
+          <figure class="screen-frame screen-frame-large">
+            <img src="iphone2.jpg" alt="Droppp light theme file list" />
+          </figure>
+          <figure class="screen-frame">
+            <img src="iphone3.jpg" alt="Droppp selected file actions" />
+          </figure>
+          <figure class="screen-frame">
+            <img src="iphone4.jpg" alt="Droppp QR code view" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-band">
+      <div class="container cta-content">
+        <div>
+          <p class="eyebrow">Private by default</p>
+          <h2>Files stay local unless you share them.</h2>
+          <p>Droppp does not require an account, analytics, ads, or cloud storage. Your transferred files are saved locally inside the app.</p>
+        </div>
+        <div class="button-row cta-actions">
+          <a class="button button-light" href="https://apps.apple.com/app/id6773982595" target="_blank" rel="noopener">Download on App Store</a>
+          <a class="button button-dark-outline" href="help.html">Read help</a>
+          <a class="button button-dark-outline" href="privacy.html">Privacy policy</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    © 2026 Droppp. All rights reserved.
+  <footer class="site-footer">
+    <div class="container">
+      &copy; 2026 PixelBrick. All rights reserved.
+    </div>
   </footer>
 </body>
 </html>
