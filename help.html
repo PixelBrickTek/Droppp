@@ -15,7 +15,12 @@
         <img src="app-icon.png" alt="" />
         <span>Droppp</span>
       </a>
-      <div class="navlinks">
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="navlinks" id="primary-nav">
         <a href="index.html#features">Features</a>
         <a href="index.html#screens">Screens</a>
         <a class="is-active" href="help.html">Help</a>
@@ -30,7 +35,7 @@
         <div>
           <p class="kicker">Droppp help</p>
           <h1>Use Droppp in three steps.</h1>
-          <p class="lead">Keep your iPhone and sending device on the same Wi-Fi network, then send files through the local drop page.</p>
+          <p class="lead">Keep your iOS device and sending device on the same Wi-Fi network, then send files through the local drop page.</p>
           <div class="button-row">
             <a class="button button-primary" href="https://apps.apple.com/app/id6773982595" target="_blank" rel="noopener">Download on App Store</a>
             <a class="button button-secondary" href="#steps">Start with step 1</a>
@@ -44,7 +49,7 @@
       <div class="container">
         <div class="section-header">
           <p class="eyebrow">1, 2, 3</p>
-          <h2>From browser to iPhone.</h2>
+          <h2>From browser to iOS device.</h2>
           <p>Droppp works locally, so the setup stays short and predictable.</p>
         </div>
 
@@ -52,7 +57,7 @@
           <article class="step-card">
             <div class="step-number">1</div>
             <div class="step-copy">
-              <h3>Open Droppp on iPhone</h3>
+              <h3>Open Droppp on your iOS device</h3>
               <p>Launch Droppp and turn on receiving. The app shows a local web address and a QR code for nearby devices.</p>
             </div>
           </article>
@@ -88,6 +93,31 @@
         </article>
       </div>
     </section>
+
+    <section class="section section-tint">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">More help</p>
+          <h2>ETC</h2>
+          <p>Extra tips for managing files in Droppp.</p>
+        </div>
+
+        <div class="notes-grid">
+          <article>
+            <h2>Select all files</h2>
+            <p>When you select one or more files in the app, a bottom popup appears. Tap the selected item count in that popup to select every file in your file library.</p>
+          </article>
+          <article>
+            <h2>Download from iOS device</h2>
+            <p>When you open the local host address in a browser, you can also download files stored inside the Droppp app on your iOS device.</p>
+          </article>
+          <article>
+            <h2>Drop files into Droppp</h2>
+            <p>If you drag a file from another app and drop it onto the Droppp screen, that file is added to your Droppp file library.</p>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -95,5 +125,6 @@
       &copy; 2026 PixelBrick. All rights reserved.
     </div>
   </footer>
+  <script src="nav.js"></script>
 </body>
 </html>
