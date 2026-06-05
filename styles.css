@@ -478,7 +478,7 @@ a {
 .step-card {
   display: grid;
   grid-template-columns: 64px minmax(0, 1fr);
-  align-items: center;
+  align-items: start;
   gap: 22px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -499,6 +499,7 @@ a {
   font-size: 24px;
   font-weight: 900;
   line-height: 1;
+  margin-top: 2px;
 }
 
 .step-copy h3 {
@@ -515,14 +516,76 @@ a {
   font-weight: 560;
 }
 
+.step-media,
+.guide-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 18px 0 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-strong);
+}
+
+.step-media {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.step-media img,
+.guide-image img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
+}
+
+.step-media-tall img,
+.guide-image img {
+  max-height: 640px;
+}
+
+.guide-image-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.guide-image-row .guide-image {
+  margin-top: 0;
+}
+
+.guide-image-compact {
+  width: fit-content;
+  max-width: 100%;
+  padding: 10px;
+}
+
+.guide-image-compact img {
+  width: min(360px, 100%);
+  max-height: 140px;
+}
+
+.guide-image-half {
+  width: 50%;
+  margin-left: 0;
+  margin-right: auto;
+}
+
 .help-notes {
   background: #f7f5ef;
 }
 
 .notes-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 28px;
+  max-width: 920px;
 }
 
 .notes-grid article {
@@ -693,7 +756,7 @@ a {
   }
 
   .step-card {
-    grid-template-columns: 48px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: 14px;
     padding: 14px;
   }
@@ -706,6 +769,16 @@ a {
 
   .step-copy h3 {
     font-size: 21px;
+  }
+
+  .step-media img,
+  .step-media-tall img,
+  .guide-image img {
+    max-height: 480px;
+  }
+
+  .guide-image-row {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .page-title {
