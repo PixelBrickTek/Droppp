@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#ffffff" />
   <title>Droppp Help — Your first drop.</title>
-  <meta name="description" content="Set up Droppp, connect a browser on the same Wi-Fi, and move files to and from your iPhone or iPad. A guide with current app screenshots." />
+  <meta name="description" content="Use Droppp over Wi-Fi or Personal Hotspot. Learn to transfer files, use the Files app, connect folders, and adjust your history and import preferences." />
   <link rel="icon" href="favicon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -25,8 +25,9 @@
     <section class="document-heading container">
       <p class="eyebrow">DROPPP / THE GUIDE</p>
       <h1>Your first drop.<br />And every one after.</h1>
-      <p class="intro">A few simple steps from a file on one device to a file on another. Start with Droppp and a shared Wi-Fi network.</p>
-      <div class="button-row"><a class="button button-primary" href="https://apps.apple.com/app/id6773982595" target="_blank" rel="noopener">Download on App Store <span aria-hidden="true">↗</span></a><a class="text-link" href="#start">Start the guide <span aria-hidden="true">↓</span></a></div>
+      <p class="intro">Connect over Wi-Fi or Personal Hotspot. Open a browser, move your files, and keep them where you need them.</p>
+      <div class="button-row"><a class="button button-primary" href="https://apps.apple.com/app/id6773982595" target="_blank" rel="noopener">Download on App Store <span aria-hidden="true">↗</span></a><a class="text-link" href="#steps">Start the guide <span aria-hidden="true">↓</span></a></div>
+      <p class="screenshot-note">Screenshots show an earlier version. Button positions and menus may look different in the current app.</p>
     </section>
 
     <div class="container help-layout">
@@ -37,20 +38,26 @@
           <a href="#connect"><span>02</span> Connect a browser</a>
           <a href="#transfer"><span>03</span> Transfer files</a>
           <a href="#manage"><span>04</span> Manage your files</a>
-          <a href="#history"><span>05</span> View activity</a>
-          <a href="#settings"><span>06</span> Make it yours</a>
-          <a href="#questions"><span>07</span> Good to know</a>
+          <a href="#files"><span>05</span> Use the Files app</a>
+          <a href="#folders"><span>06</span> Connect a folder</a>
+          <a href="#history"><span>07</span> View activity</a>
+          <a href="#settings"><span>08</span> Make it yours</a>
+          <a href="#questions"><span>09</span> Good to know</a>
         </nav>
-        <p class="sidebar-note">Keep Droppp open and both devices on the same Wi-Fi while transferring files.</p>
+        <p class="sidebar-note">Keep Droppp open and your screen on. Both devices must stay connected through Wi-Fi or Personal Hotspot.</p>
       </aside>
       <div class="guide-content">
         <section class="guide-intro" id="steps">
-          <h2>Before you start</h2>
-          <ul><li>Install Droppp on your iPhone or iPad.</li><li>Connect both devices to the same Wi-Fi network.</li><li>Keep Droppp open while the local server is running.</li></ul>
+          <h2>Choose your connection.</h2>
+          <div class="connection-options">
+            <article><h3>Same Wi-Fi</h3><p>Connect your iPhone or iPad and the other device to the same Wi-Fi network.</p></article>
+            <article><h3>Personal Hotspot</h3><p>On your iPhone or supported cellular iPad, open Settings → Personal Hotspot and turn on Allow Others to Join. Connect the other device to that hotspot.</p></article>
+          </div>
+          <p class="text-note">Once connected, open Droppp. Keep the app visible and the screen on throughout the transfer.</p>
         </section>
 
         <section class="guide-step" id="start">
-          <div class="step-heading"><span class="list-index">01</span><div><h2>Switch on the local server.</h2><p>Open Droppp and turn on the switch in the upper-right corner. When the server is running, a local address appears beneath the app name.</p></div></div>
+          <div class="step-heading"><span class="list-index">01</span><div><h2>Switch on the local server.</h2><p>Turn on the switch beside Droppp. Wait for the connection address to appear. Droppp remembers your ON/OFF preference when you reopen the app; a supported network connection is still needed.</p></div></div>
           <div class="guide-pair">
             <figure><img src="assets/iphone-start.jpg" alt="Droppp start screen with the server switch set to OFF" width="1179" height="2556" loading="lazy" decoding="async" /><figcaption>SERVER OFF / Ready when you are</figcaption></figure>
             <figure><img src="assets/iphone-connect.jpg" alt="Droppp with the server switched ON and a local address displayed" width="1179" height="2556" loading="lazy" decoding="async" /><figcaption>SERVER ON / Your address appears</figcaption></figure>
@@ -58,18 +65,26 @@
         </section>
 
         <section class="guide-step" id="connect">
-          <div class="step-heading"><span class="list-index">02</span><div><h2>Open your address in a browser.</h2><p>On your computer, Android device, or tablet, open the local address displayed in Droppp. Both devices need to be connected to the same Wi-Fi. Tap the address in the app to copy it, or use the QR option when scanning is easier.</p></div></div>
+          <div class="step-heading"><span class="list-index">02</span><div><h2>Open your address in a browser.</h2><p>On the device connected to your Wi-Fi or hotspot, enter the full address shown in Droppp. A computer, phone, or tablet can connect without installing another app.</p></div></div>
+          <div class="guide-topics">
+            <article><h3>Copy, scan, or change the port.</h3><p>Tap the address to expand the controls beneath it. Copy the link, show a QR code, or change the server port. Tap the address again to collapse the controls.</p></article>
+          </div>
           <figure class="guide-browser"><img src="assets/browser-transfer.png" alt="The Droppp local browser page with file upload and download controls" width="1897" height="901" loading="lazy" decoding="async" /><figcaption>The local Droppp page, opened in a desktop browser.</figcaption></figure>
-          <p class="text-note">Use the address shown on your own device. The address in these screenshots is an example and may be different from yours.</p>
+          <p class="text-note">Your address may use numbers or a name ending in .local. Always use the current address and port shown on your own device, not the one in a screenshot.</p>
         </section>
 
         <section class="guide-step" id="transfer">
-          <div class="step-heading"><span class="list-index">03</span><div><h2>Drop in. Download back out.</h2><p>Drag files onto the browser’s drop area, or use its file picker to choose what to upload. Received files appear in Droppp on your iPhone or iPad. To move a file the other way, use the download controls beside files in the browser list.</p></div></div>
-          <p class="text-note">Leave Droppp open during the transfer. If you leave the app or the display turns off, return to Droppp and restart the server before connecting again.</p>
+          <div class="step-heading"><span class="list-index">03</span><div><h2>Upload here. Download there.</h2><p>Browse your Droppp library, Files, or a connected folder from the web page.</p></div></div>
+          <div class="guide-topics">
+            <article><h3>Send files to Droppp.</h3><p>Open the destination folder, then drop files onto the page or choose them with the upload button. On a phone or tablet, use the file picker.</p></article>
+            <article><h3>Download to the other device.</h3><p>Download individual files, select several, or download a folder. The browser saves the download on that device.</p></article>
+            <article><h3>Create text and links.</h3><p>Use the browser’s TXT and URL controls to save a text file or a web link in the selected location.</p></article>
+          </div>
+          <p class="text-note">If a transfer stops after you leave the app or lock the screen, return to Droppp, check that the server is ON, and reconnect using the displayed address.</p>
         </section>
 
         <section class="guide-step" id="manage">
-          <div class="step-heading"><span class="list-index">04</span><div><h2>Keep your files in order.</h2><p>Tap the add button to bring in photos or files, create a folder, or add a text file. Use search to find an item in the current folder and filter by type, extension, or size.</p></div></div>
+          <div class="step-heading"><span class="list-index">04</span><div><h2>Keep your files in order.</h2><p>Use + to import photos or files, create a folder, or write a TXT file. Create folders inside other folders and drag items into place. Search the current folder and filter by type, extension, or size.</p></div></div>
           <div class="guide-pair">
             <figure><img src="assets/iphone-add-files.jpg" alt="Droppp add menu for Photos, Files, Folder, and TXT" width="1179" height="2556" loading="lazy" decoding="async" /><figcaption>ADD / Bring your files together</figcaption></figure>
             <figure><img src="assets/iphone-search.jpg" alt="Droppp search field and filters above a folder and file list" width="1179" height="2556" loading="lazy" decoding="async" /><figcaption>SEARCH / Find what you need</figcaption></figure>
@@ -77,24 +92,45 @@
           <p class="text-note">You can also drag files into Droppp from other apps. Select saved files to share, delete, or move them into apps that support drag and drop.</p>
         </section>
 
+        <section class="guide-step" id="files">
+          <div class="step-heading"><span class="list-index">05</span><div><h2>Open the same files in Files.</h2><p>Tap Files below the + button in Droppp. This dedicated folder is also available in Apple’s Files app.</p></div></div>
+          <div class="guide-topics">
+            <article><h3>Find it on your device.</h3><p>In Files, open Browse → On My iPhone (or On My iPad) → Droppp → Files. Additions and deletions inside this folder appear in both apps.</p></article>
+            <article><h3>Copy between your libraries.</h3><p>Drag files from Droppp’s main list onto Files to copy them. To copy back, hold one or more files, close the Files page with X, and drop them into the main list.</p></article>
+          </div>
+          <p class="text-note">The Files shortcut cannot be deleted inside Droppp. Its contents can be deleted. If the folder is removed in the Files app, Droppp recreates the folder when reopened; deleted files are not restored.</p>
+        </section>
+
+        <section class="guide-step" id="folders">
+          <div class="step-heading"><span class="list-index">06</span><div><h2>Connect an existing folder.</h2><p>Tap + → Connect a folder, then choose a folder in the Files picker. It appears in your list with a small link indicator.</p></div></div>
+          <div class="guide-topics">
+            <article><h3>Work with the original files.</h3><p>A connected folder points to its original location. Files added or deleted inside it are added or deleted there, too. Disconnecting the folder removes its link from Droppp and keeps the original folder.</p></article>
+            <article><h3>Use it from your browser.</h3><p>Open the connected folder on Droppp’s web page to upload, browse, and download its files.</p></article>
+            <article><h3>Include iCloud Drive.</h3><p>You can connect iCloud Drive folders. Files stored only in the cloud may need time and an internet connection to download before they open or transfer.</p></article>
+          </div>
+        </section>
+
         <section class="guide-step" id="history">
-          <div class="step-heading"><span class="list-index">05</span><div><h2>See what moved.</h2><p>Open History from Settings to review your recent file activity.</p></div></div>
-          <div class="guide-detail"><div class="detail-copy"><h3>Your activity, at a glance.</h3><p>Insights show received, sent, and deleted items along with the amount of data transferred.</p><h3>Narrow the view.</h3><p>Search for a file name or source, and use the activity, time, and file-type filters to find a specific event.</p></div><figure><img src="assets/iphone-history.jpg" alt="Droppp History screen with Insights, filters, and recent activity" width="1179" height="2556" loading="lazy" decoding="async" /></figure></div>
+          <div class="step-heading"><span class="list-index">07</span><div><h2>Choose what to record.</h2><p>Open History from Settings to review recent file activity and transfer insights.</p></div></div>
+          <div class="guide-detail"><div class="detail-copy"><h3>Find an activity.</h3><p>Review received, sent, and deleted items. Search by file name or source, then filter by activity, time, or file type.</p><h3>Pause new records.</h3><p>Turn on Disable history below History in Settings. New activity is no longer recorded, and existing history is kept. Turn it off to resume recording.</p><h3>Remove old records.</h3><p>Delete selected history entries when you no longer need them. Removing a record does not delete the file.</p></div><figure><img src="assets/iphone-history.jpg" alt="Droppp History screen with Insights, filters, and recent activity" width="1179" height="2556" loading="lazy" decoding="async" /></figure></div>
         </section>
 
         <section class="guide-step" id="settings">
-          <div class="step-heading"><span class="list-index">06</span><div><h2>Make it feel like yours.</h2><p>Open Settings using the gear button in the lower-right corner of Droppp.</p></div></div>
-          <div class="guide-detail"><div class="detail-copy"><h3>Appearance &amp; language.</h3><p>Follow your system appearance, or choose Light or Dark. Set your preferred app language here, too.</p><h3>Auto-dim screen.</h3><p>When enabled, Droppp keeps the current brightness for 10 seconds, then lowers it while the server is on.</p><h3>Help is always here.</h3><p>Return to this guide from the Help row in Settings.</p></div><figure><img src="assets/iphone-settings.jpg" alt="The new Droppp Settings screen showing appearance, auto-dim, language, History, feedback, and Help" width="1179" height="2556" loading="lazy" decoding="async" /></figure></div>
+          <div class="step-heading"><span class="list-index">08</span><div><h2>Make it feel like yours.</h2><p>Open Settings with the gear button.</p></div></div>
+          <div class="guide-detail"><div class="detail-copy"><h3>Appearance and language.</h3><p>Follow your system appearance or choose Light or Dark. Select your preferred app language here, too.</p><h3>Auto-dim screen.</h3><p>Lower screen brightness automatically while the server is on. Keep Droppp in the foreground for transfers.</p><h3>Fewer confirmation messages.</h3><p>Turn on Hide import success message below Auto-dim screen to skip the import completion popup. It is off by default. Choosing Don’t show again in that popup enables the same setting.</p></div><figure><img src="assets/iphone-settings.jpg" alt="Droppp Settings with appearance, auto-dim screen, language, History, and Help" width="1179" height="2556" loading="lazy" decoding="async" /></figure></div>
         </section>
 
         <section class="guide-step" id="questions">
-          <div class="step-heading"><span class="list-index">07</span><div><h2>A few useful details.</h2><p>Quick answers for your next transfer.</p></div></div>
+          <div class="step-heading"><span class="list-index">09</span><div><h2>A few useful details.</h2><p>Quick answers for your next transfer.</p></div></div>
           <div class="faq">
-            <details><summary>Why can’t the browser connect?</summary><p>Check that both devices are on the same Wi-Fi, the local server is switched on, and Droppp is still open. Use the full address currently displayed in the app. If the server has stopped, turn it on again and retry.</p></details>
+            <details><summary>Why can’t the browser connect?</summary><p>Check that both devices share the same Wi-Fi or that the other device is connected to your Personal Hotspot. Keep Droppp open with the server ON and allow its Local Network permission in iOS Settings. Enter the full current address, including http:// and the port. Some guest or public Wi-Fi networks prevent devices from connecting to each other.</p></details>
+            <details><summary>Does a hotspot link work from anywhere?</summary><p>No. The other device must be connected to your hotspot. The address shown in Droppp is a local address, not a public website.</p></details>
+            <details><summary>Do hotspot transfers use mobile data?</summary><p>Transferring files already stored on your device stays on the local connection. Downloading cloud-only files, syncing a connected cloud folder, or other internet activity may use mobile data.</p></details>
             <details><summary>How do I select all files?</summary><p>After selecting files, tap the selected item count in the lower-left corner to select all files.</p></details>
-            <details><summary>Can I change the server port?</summary><p>Press and hold the local server address in Droppp, then enter the port number you want to use. Connect using the updated address.</p></details>
-            <details><summary>Where are my files stored?</summary><p>Received files are stored locally inside Droppp on your iPhone or iPad. They stay there until you move or delete them, or remove the app.</p></details>
-            <details><summary>Do I need an account or a cloud service?</summary><p>No account is required. Transfers use your local Wi-Fi network, and Droppp does not upload your files to a cloud service.</p></details>
+            <details><summary>Can I change the server port?</summary><p>Tap the address to expand its controls, choose the port option, and enter a new port. Reconnect using the updated address.</p></details>
+            <details><summary>Where are my files stored?</summary><p>Your Droppp library and its Files folder are stored on your device and are removed if you delete the app. Connected folders stay in their original location. A connected cloud folder can sync through its storage provider.</p></details>
+            <details><summary>Do I need an account or a cloud service?</summary><p>Droppp needs no account or cloud service for local transfers. Connecting an iCloud Drive folder is optional and uses your existing iCloud setup.</p></details>
+            <details><summary>What if a connected folder is unavailable?</summary><p>Check that it opens in the Files app and that its storage provider is available. For iCloud files, check your internet connection. If access has changed, reconnect the folder from the + menu.</p></details>
           </div>
         </section>
         <div class="help-bottom"><p>Ready for your next drop?</p><a class="text-link" href="index.html">Back to Droppp <span aria-hidden="true">↗</span></a></div>
